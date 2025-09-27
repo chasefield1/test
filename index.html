@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>지뢰찾기</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <h1>지뢰찾기</h1>
+        <p class="subtitle">모바일과 데스크톱에서 바로 즐길 수 있는 웹 버전</p>
+      </header>
+
+      <section class="controls" aria-label="게임 설정">
+        <label class="control">
+          <span>난이도</span>
+          <select id="difficulty">
+            <option value="beginner">초급 (9×9, 지뢰 10개)</option>
+            <option value="intermediate">중급 (16×16, 지뢰 40개)</option>
+            <option value="expert">고급 (16×30, 지뢰 99개)</option>
+          </select>
+        </label>
+        <button id="restart" type="button">새 게임</button>
+        <button id="flag-toggle" type="button" aria-pressed="false">깃발 모드 꺼짐</button>
+      </section>
+
+      <section class="stats" aria-label="게임 통계">
+        <div class="stat">
+          <span class="stat-label">남은 지뢰</span>
+          <span id="flags-remaining" class="stat-value">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">경과 시간</span>
+          <span id="timer" class="stat-value">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">열린 칸</span>
+          <span id="revealed" class="stat-value">0</span>
+        </div>
+      </section>
+
+      <div id="status-message" class="status-message" role="status" aria-live="polite"></div>
+
+      <div id="board" class="board" role="grid" aria-label="지뢰찾기 보드"></div>
+
+      <p class="hint">
+        모바일에서는 깃발 모드를 켠 뒤 칸을 누르거나, 데스크톱에서는 오른쪽 클릭으로 깃발을
+        꽂을 수 있어요.
+      </p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
